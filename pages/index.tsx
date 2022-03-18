@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     <>
       <Header />
       <Stack direction="row" alignItems="center" spacing={4} my={16} mx={4}>
-        <Image src="/home.jpg" width="900px" height="550px" alt="info-img" />
+        <Image src="/home2.jpg" width="900px" height="550px" alt="info-img" />
         <div>
           <Typography variant="h2" component="h2" sx={{ color: textColor, marginTop: '2rem' }}>
             О нас
