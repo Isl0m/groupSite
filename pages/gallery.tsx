@@ -2,7 +2,8 @@ import * as React from 'react';
 import { ImageList, ImageListItem, Typography } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import Image from 'next/image';
-
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import Header from '../components/Header';
 
 const itemData = [
@@ -39,6 +40,18 @@ const itemData = [
 const textColor = grey[800];
 
 const Gallary = () => {
+  const theme = useTheme();
+  const mediaLG = useMediaQuery(theme.breakpoints.up('lg'));
+  const mediaSM = useMediaQuery(theme.breakpoints.up('sm'));
+  const getRowHeight = (): number => {
+    if (mediaLG) {
+      return 300;
+    }
+    if (mediaSM) {
+      return 250;
+    }
+    return 200;
+  };
   return (
     <>
       <Header />
@@ -50,10 +63,15 @@ const Gallary = () => {
         Галерея нашей группы
       </Typography>
       <ImageList
-        sx={{ width: 1000, height: 1250, marginLeft: 'auto', marginRight: 'auto' }}
+        sx={{
+          width: { lg: 1000, md: 700, sm: 600, xs: 400 },
+          height: { lg: 1250, md: 1000, sm: 800, xs: 600 },
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}
         variant="quilted"
         cols={4}
-        rowHeight={300}>
+        rowHeight={getRowHeight()}>
         {itemData.map((item) => (
           <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
             <Image src={item.img} alt={item.title} layout="fill" loading="lazy" />
