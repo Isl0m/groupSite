@@ -9,7 +9,7 @@ import {
   Paper,
 } from '@mui/material';
 import TableCells from './TableCells';
-import { ITableProps } from '../consts';
+import { ITableProps } from '../../consts';
 
 const BasicTable = (props: ITableProps) => {
   const { tableCells, tableRows } = props;

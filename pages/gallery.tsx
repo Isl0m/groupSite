@@ -1,10 +1,9 @@
-import * as React from 'react';
-import { ImageList, ImageListItem, Typography } from '@mui/material';
-import { grey } from '@mui/material/colors';
 import Image from 'next/image';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { ImageList, ImageListItem, Typography, useMediaQuery } from '@mui/material';
+import { grey } from '@mui/material/colors';
 import { useTheme } from '@mui/material/styles';
-import Header from '../components/Header';
+
+import Layout from '../app/layouts/Layout';
 
 const itemData = [
   {
@@ -54,30 +53,31 @@ const Gallary = () => {
   };
   return (
     <>
-      <Header />
-      <Typography
-        variant="h3"
-        component="h3"
-        align="center"
-        sx={{ color: textColor, marginTop: '2rem' }}>
-        Галерея нашей группы
-      </Typography>
-      <ImageList
-        sx={{
-          width: { lg: 1000, md: 700, sm: 600, xs: 400 },
-          height: { lg: 1250, md: 1000, sm: 800, xs: 600 },
-          marginLeft: 'auto',
-          marginRight: 'auto',
-        }}
-        variant="quilted"
-        cols={4}
-        rowHeight={getRowHeight()}>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-            <Image src={item.img} alt={item.title} layout="fill" loading="lazy" />
-          </ImageListItem>
-        ))}
-      </ImageList>
+      <Layout title="Галерея группы">
+        <Typography
+          variant="h3"
+          component="h3"
+          align="center"
+          sx={{ color: textColor, marginTop: '2rem' }}>
+          Галерея нашей группы
+        </Typography>
+        <ImageList
+          sx={{
+            width: { lg: 1000, md: 700, sm: 600, xs: 400 },
+            height: { lg: 1250, md: 1000, sm: 800, xs: 600 },
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}
+          variant="quilted"
+          cols={4}
+          rowHeight={getRowHeight()}>
+          {itemData.map((item) => (
+            <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+              <Image src={item.img} alt={item.title} layout="fill" loading="lazy" />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </Layout>
     </>
   );
 };
