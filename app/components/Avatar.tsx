@@ -22,10 +22,23 @@ function stringToColor(string: string) {
   return color;
 }
 interface IStringAvatar {
-  nameProps: string;
+  nameProps: string | undefined;
 }
 function stringAvatar(name: IStringAvatar) {
   const { nameProps } = name;
+  if (!nameProps) {
+    return {
+      sx: {
+        bgcolor: stringToColor('Islom Rustamov'),
+        marginTop: '10vh',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+        width: 100,
+        height: 100,
+        fontSize: '2.5rem',
+      },
+    };
+  }
   return {
     sx: {
       bgcolor: stringToColor(nameProps),
