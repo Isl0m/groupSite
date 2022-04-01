@@ -1,9 +1,9 @@
 import { Typography } from '@mui/material';
 import { grey } from '@mui/material/colors';
 
-import Layout from '../app/layouts/Layout';
-import Table from '../app/components/Table';
-import { rows, cells } from '../consts';
+import Layout from '../../app/layouts/Layout';
+import Table from '../../app/components/Table';
+import { rows, cells } from '../../consts';
 
 const textColor = grey[700];
 const Rating = () => {
