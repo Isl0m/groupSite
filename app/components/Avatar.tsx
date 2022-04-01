@@ -21,8 +21,10 @@ function stringToColor(string: string) {
 
   return color;
 }
-
-function stringAvatar(name: string) {
+interface IStringAvatar {
+  nameProps: string;
+}
+function stringAvatar(name: IStringAvatar) {
   const { nameProps } = name;
   return {
     sx: {
@@ -38,6 +40,6 @@ function stringAvatar(name: string) {
   };
 }
 
-export default function BackgroundLetterAvatars(nameProps: string) {
+export default function BackgroundLetterAvatars(nameProps: IStringAvatar) {
   return <Avatar {...stringAvatar(nameProps)} />;
 }
