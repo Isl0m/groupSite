@@ -16,7 +16,9 @@ import { rows, cell } from '../../consts';
 const RatingItem: React.FC = () => {
   const router = useRouter();
   const currentRow = rows.find((row) => row.num === Number(router.query.id));
-
+  if (!currentRow.name) {
+    return 'Error';
+  }
   return (
     <>
       <Layout>
