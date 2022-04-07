@@ -45,7 +45,9 @@ const RatingItem: React.FC = () => {
         <Typography variant="h3" component="h3" align="center" sx={{ marginTop: '2rem' }}>
           {currentRow.name}
         </Typography>
-        <Paper elevation={3} sx={{ maxWidth: '60vw', margin: '2rem auto' }}>
+        <Paper
+          elevation={3}
+          sx={{ maxWidth: { sm: '95vw', md: '80vw', lg: '65vw' }, margin: '2rem auto' }}>
           <TableContainer>
             <Table sx={{ minWidth: 750 }} aria-label="simple table">
               <TableHead>
