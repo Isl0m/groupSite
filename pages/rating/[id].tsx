@@ -20,12 +20,9 @@ const bgColor = grey[300];
 
 const RatingItem: React.FC = () => {
   const router = useRouter();
+  const dataID: number = Number(router.query.id) - 1;
 
-  const data = rows.find((row) => row.num === Number(router.query.id));
-  if (data) {
-    const currentRow: ITableRows = data;
-  }
-  const currentRow: ITableRows = rows[0];
+  const currentRow: ITableRows = rows[dataID];
 
   const getClassName = (item: string | number) => {
     if (typeof item === 'number') {
