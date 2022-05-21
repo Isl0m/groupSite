@@ -21,7 +21,7 @@ const bgColor = grey[300];
 const RatingItem: NextPage = () => {
   const router = useRouter();
   const dataID: number = Number(router.query.id) - 1;
-  if (dataID < 0 || dataID > rows.length - 1) {
+  if (dataID < 0 || dataID > rows.length) {
     return null;
   }
   const currentRow: ITableRows = rows[dataID];
