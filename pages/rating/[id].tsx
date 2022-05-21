@@ -1,3 +1,4 @@
+import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import {
   Typography,
@@ -18,7 +19,7 @@ import { rows, cell, ITableRows } from '../../consts';
 
 const bgColor = grey[300];
 
-const RatingItem: React.FC = () => {
+const RatingItem: NextPage = () => {
   const router = useRouter();
   const dataID: number = Number(router.query.id) - 1;
 
@@ -39,12 +40,21 @@ const RatingItem: React.FC = () => {
     <>
       <Layout title={currentRow.name}>
         <BackgroundLetterAvatars nameProps={currentRow.name} />
-        <Typography variant="h3" component="h3" align="center" sx={{ marginTop: '2rem' }}>
+        <Typography
+          variant="h3"
+          component="h3"
+          align="center"
+          sx={{ marginTop: '2rem' }}
+        >
           {currentRow.name}
         </Typography>
         <Paper
           elevation={3}
-          sx={{ maxWidth: { sm: '95vw', md: '80vw', lg: '65vw' }, margin: '2rem auto' }}>
+          sx={{
+            maxWidth: { sm: '95vw', md: '80vw', lg: '65vw' },
+            margin: '2rem auto',
+          }}
+        >
           <TableContainer>
             <Table sx={{ minWidth: 750 }} aria-label="simple table">
               <TableHead>
@@ -57,18 +67,24 @@ const RatingItem: React.FC = () => {
                 {currentRow.subjects.map((subject, idx) => (
                   <TableRow
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                    key={`${idx}-${subject}`}>
+                    key={`${idx}-${subject}`}
+                  >
                     <TableCell>{cell[++idx]}</TableCell>
-                    <TableCell className={getClassName(subject)}>{subject}</TableCell>
+                    <TableCell className={getClassName(subject)}>
+                      {subject}
+                    </TableCell>
                   </TableRow>
                 ))}
                 <TableRow
                   sx={{
                     '&:last-child td, &:last-child th': { border: 0 },
                     backgroundColor: bgColor,
-                  }}>
+                  }}
+                >
                   <TableCell>Средняя оценка</TableCell>
-                  <TableCell className={getClassName(average)}>{average}</TableCell>
+                  <TableCell className={getClassName(average)}>
+                    {average}
+                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>

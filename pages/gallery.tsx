@@ -1,5 +1,11 @@
+import type { NextPage } from 'next';
 import Image from 'next/image';
-import { ImageList, ImageListItem, Typography, useMediaQuery } from '@mui/material';
+import {
+  ImageList,
+  ImageListItem,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import { grey } from '@mui/material/colors';
 import { useTheme } from '@mui/material/styles';
 
@@ -38,7 +44,7 @@ const itemData = [
 ];
 const textColor = grey[800];
 
-const Gallary = () => {
+const Gallary: NextPage = () => {
   const theme = useTheme();
   const mediaLG = useMediaQuery(theme.breakpoints.up('lg'));
   const mediaSM = useMediaQuery(theme.breakpoints.up('sm'));
@@ -58,7 +64,8 @@ const Gallary = () => {
           variant="h3"
           component="h3"
           align="center"
-          sx={{ color: textColor, marginTop: '2rem' }}>
+          sx={{ color: textColor, marginTop: '2rem' }}
+        >
           Галерея нашей группы
         </Typography>
         <ImageList
@@ -70,10 +77,20 @@ const Gallary = () => {
           }}
           variant="quilted"
           cols={4}
-          rowHeight={getRowHeight()}>
+          rowHeight={getRowHeight()}
+        >
           {itemData.map((item) => (
-            <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-              <Image src={item.img} alt={item.title} layout="fill" loading="lazy" />
+            <ImageListItem
+              key={item.img}
+              cols={item.cols || 1}
+              rows={item.rows || 1}
+            >
+              <Image
+                src={item.img}
+                alt={item.title}
+                layout="fill"
+                loading="lazy"
+              />
             </ImageListItem>
           ))}
         </ImageList>
