@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import {
   Typography,
@@ -24,7 +25,14 @@ const RatingItem: NextPage = () => {
   const dataID: number = Number(router.query.id) - 1;
   const currentRow: ITableRows = rows[dataID];
   if (!currentRow) {
-    return 'Page not found';
+    return (
+      <>
+        <Layout title="Оценки учащихся">
+          <Typography>Страница не найдена</Typography>
+          <Link href="/rating">Назад</Link>
+        </Layout>
+      </>
+    );
   } else {
     const getClassName = (item: string | number) => {
       if (typeof item === 'number') {
