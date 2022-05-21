@@ -20,12 +20,12 @@ const bgColor = grey[300];
 
 const RatingItem: NextPage = () => {
   const router = useRouter();
-  const dataID: number = Number(router.query.id) - 1;
-  if (dataID < 0 || dataID > rows.length) {
-    return null;
-  } else {
-    const currentRow: ITableRows = rows[dataID];
 
+  const dataID: number = Number(router.query.id) - 1;
+  const currentRow: ITableRows = rows[dataID];
+  if (!currentRow) {
+    return 'Page not found';
+  } else {
     const getClassName = (item: string | number) => {
       if (typeof item === 'number') {
         return `color--${item} `;
@@ -35,7 +35,7 @@ const RatingItem: NextPage = () => {
     const getAverage = (arr: number[]) => {
       return Math.round(arr.reduce((acc, curr) => acc + curr, 0) / arr.length);
     };
-    const average = getAverage(currentRow.subjects);
+    const average = getAverage(currentRow?.subjects);
 
     return (
       <>
