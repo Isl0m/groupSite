@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 
 function stringToColor(string: string) {
@@ -21,37 +20,39 @@ function stringToColor(string: string) {
   return color;
 }
 interface IStringAvatar {
-  nameProps: string | undefined;
+  nameProps: string;
+  isMrgin: boolean;
 }
-function stringAvatar(name: IStringAvatar) {
-  const { nameProps } = name;
-  if (!nameProps) {
-    return {
-      sx: {
-        bgcolor: stringToColor('Islom Rustamov'),
+function stringAvatar(props: IStringAvatar) {
+  const { nameProps = 'Islom Rustamov', isMrgin = true } = props;
+  const avatarStyles = isMrgin
+    ? {
+        bgcolor: stringToColor(nameProps),
         marginTop: '10vh',
         marginRight: 'auto',
         marginLeft: 'auto',
         width: 100,
         height: 100,
         fontSize: '2.5rem',
-      },
+      }
+    : {
+        bgcolor: stringToColor(nameProps),
+        width: 75,
+        height: 75,
+        fontSize: '2rem',
+      };
+
+  if (!nameProps) {
+    return {
+      sx: avatarStyles,
     };
   }
   return {
-    sx: {
-      bgcolor: stringToColor(nameProps),
-      marginTop: '10vh',
-      marginRight: 'auto',
-      marginLeft: 'auto',
-      width: 100,
-      height: 100,
-      fontSize: '2.5rem',
-    },
+    sx: avatarStyles,
     children: `${nameProps.split(' ')[0][0]}${nameProps.split(' ')[1][0]}`,
   };
 }
 
-export default function BackgroundLetterAvatars(nameProps: IStringAvatar) {
-  return <Avatar {...stringAvatar(nameProps)} />;
+export default function BackgroundLetterAvatars(props: IStringAvatar) {
+  return <Avatar {...stringAvatar(props)} />;
 }
