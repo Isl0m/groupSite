@@ -20,7 +20,7 @@ const MediaCard: React.FC<IProps> = ({
   name,
   discription,
   img,
-  isFullName = false,
+  isFullName,
 }) => {
   console.log(name, discription, img);
   return (

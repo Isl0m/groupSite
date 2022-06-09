@@ -25,7 +25,11 @@ interface IStringAvatar {
   isFullName: boolean;
 }
 function stringAvatar(props: IStringAvatar) {
-  const { nameProps = 'Islom Rustamov', isMrgin = true, isFullName } = props;
+  const {
+    nameProps = 'Islom Rustamov',
+    isMrgin = true,
+    isFullName = false,
+  } = props;
   const avatarStyles = isMrgin
     ? {
         bgcolor: stringToColor(nameProps),
