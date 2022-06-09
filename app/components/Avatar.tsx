@@ -52,10 +52,9 @@ function stringAvatar(props: IStringAvatar) {
       sx: avatarStyles,
     };
   }
-  console.log(isFullName);
   const children = isFullName
     ? `${nameProps.split(' ')[0][0]}${nameProps.split('.')[0].split(' ')[1]}`
-    : `${nameProps.split(' ')[0][0]}${nameProps.split(' ')[0][0]}`;
+    : `${nameProps.split(' ')[0][0]}${nameProps.split(' ')[1][0]}`;
   return {
     sx: avatarStyles,
     children: children,

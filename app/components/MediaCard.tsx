@@ -22,7 +22,6 @@ const MediaCard: React.FC<IProps> = ({
   img,
   isFullName,
 }) => {
-  console.log(name, discription, img);
   return (
     <Paper elevation={2} sx={{ maxWidth: '100%', m: '1rem 0' }}>
       <Card
