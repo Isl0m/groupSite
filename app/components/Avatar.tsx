@@ -21,8 +21,8 @@ function stringToColor(string: string) {
 }
 interface IStringAvatar {
   nameProps: string;
-  isMrgin: boolean;
-  isFullName: boolean;
+  isMrgin?: boolean;
+  isFullName?: boolean;
 }
 function stringAvatar(props: IStringAvatar) {
   const {
