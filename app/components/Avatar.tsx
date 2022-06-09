@@ -25,7 +25,7 @@ interface IStringAvatar {
   isFullName: boolean;
 }
 function stringAvatar(props: IStringAvatar) {
-  const { nameProps = 'Islom Rustamov', isMrgin = true,isFullName  } = props;
+  const { nameProps = 'Islom Rustamov', isMrgin = true, isFullName } = props;
   const avatarStyles = isMrgin
     ? {
         bgcolor: stringToColor(nameProps),
@@ -48,8 +48,10 @@ function stringAvatar(props: IStringAvatar) {
       sx: avatarStyles,
     };
   }
-  console.log(isFullName)
-  const children = isFullName?`${nameProps.split(' ')[0][0]}${nameProps.split('.')[0].split(' ')[1]}`:`${nameProps.split(' ')[0][0]}${nameProps.split(' ')[0][0]}`;
+  console.log(isFullName);
+  const children = isFullName
+    ? `${nameProps.split(' ')[0][0]}${nameProps.split('.')[0].split(' ')[1]}`
+    : `${nameProps.split(' ')[0][0]}${nameProps.split(' ')[0][0]}`;
   return {
     sx: avatarStyles,
     children: children,

@@ -13,10 +13,15 @@ interface IProps {
   name: string;
   discription: string;
   img?: string;
-  isFullName?: boolean;
+  isFullName: boolean;
 }
 
-const MediaCard: React.FC<IProps> = ({ name, discription, img, isFullName }) => {
+const MediaCard: React.FC<IProps> = ({
+  name,
+  discription,
+  img,
+  isFullName = false,
+}) => {
   console.log(name, discription, img);
   return (
     <Paper elevation={2} sx={{ maxWidth: '100%', m: '1rem 0' }}>
