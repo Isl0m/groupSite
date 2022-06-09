@@ -13,9 +13,10 @@ interface IProps {
   name: string;
   discription: string;
   img?: string;
+  isFullName?: boolean;
 }
 
-const MediaCard: React.FC<IProps> = ({ name, discription, img }) => {
+const MediaCard: React.FC<IProps> = ({ name, discription, img, isFullName }) => {
   console.log(name, discription, img);
   return (
     <Paper elevation={2} sx={{ maxWidth: '100%', m: '1rem 0' }}>
@@ -50,7 +51,7 @@ const MediaCard: React.FC<IProps> = ({ name, discription, img }) => {
           />
         ) : (
           <Box>
-            <Avatar nameProps={name} isMrgin={false} />
+            <Avatar nameProps={name} isMrgin={false} isFullName={isFullName} />
           </Box>
         )}
       </Card>
