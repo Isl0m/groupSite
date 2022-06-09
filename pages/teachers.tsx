@@ -8,75 +8,75 @@ import MediaCard from '../app/components/MediaCard';
 const textColor = grey[800];
 
 const teachersArr = [
-     {
-	name: 'Сиденко И.А',
-	discr: 'Математики'
-     },
-     {
-	name: 'Турханов С.Ф',
-	discr: 'Математики'
-     },
-     {
-	name: 'Кульчуков Б.Ж',
-	discr: 'Физики'
-     },
-     {
-	name: 'Ботиров Б.И',
-	discr: 'Физики'
-     },
-     {
-	name: 'Абдукахарова З.А',
-	discr: 'Информатики'
-     },
-     {
-	name: 'Ниязова Ф.Т',
-	discr: 'Информатики'
-     },
-     {
-	name: 'Кан Г.С',
-	discr: 'Английского языка'
-     },
-     {
-	name: 'Икрамова Г.М',
-	discr: 'Английского языка'
-     },
-     {
-	name: 'Ратушина О.В',
-	discr: 'Русского языка'
-     },
-     {
-	name: 'Касимова Д.Р',
-	discr: 'Узбекского языка'
-     },
-     {
-	name: 'Арзикулов А.И',
-	discr: 'Физкультуры'
-     },
-     {
-	name: 'Заитова Ш.Р',
-	discr: 'Истории'
-     },
-     {
-	name: 'Ходжаев М.С',
-	discr: 'Астрономии'
-     },
-     {
-	name: 'Чалтаев Б.К',
-	discr: 'НВП'
-     },
-     {
-	name: 'Кучкарова М.Т',
-	discr: 'НВП'
-     },
-     {
-	name: 'Тутунжан А.Н',
-	discr: 'Биологии'
-     },
-     {
-	name: 'Саидваккасова З.Х',
-	discr: 'Химии'
-     },
-]
+  {
+    name: 'Сиденко И.А',
+    discr: 'Математики',
+  },
+  {
+    name: 'Турханов С.Ф',
+    discr: 'Математики',
+  },
+  {
+    name: 'Кульчуков Б.Ж',
+    discr: 'Физики',
+  },
+  {
+    name: 'Ботиров Б.И',
+    discr: 'Физики',
+  },
+  {
+    name: 'Абдукахарова З.А',
+    discr: 'Информатики',
+  },
+  {
+    name: 'Ниязова Ф.Т',
+    discr: 'Информатики',
+  },
+  {
+    name: 'Кан Г.С',
+    discr: 'Английского языка',
+  },
+  {
+    name: 'Икрамова Г.М',
+    discr: 'Английского языка',
+  },
+  {
+    name: 'Ратушина О.В',
+    discr: 'Русского языка',
+  },
+  {
+    name: 'Касимова Д.Р',
+    discr: 'Узбекского языка',
+  },
+  {
+    name: 'Арзикулов А.И',
+    discr: 'Физкультуры',
+  },
+  {
+    name: 'Заитова Ш.Р',
+    discr: 'Истории',
+  },
+  {
+    name: 'Ходжаев М.С',
+    discr: 'Астрономии',
+  },
+  {
+    name: 'Чалтаев Б.К',
+    discr: 'НВП',
+  },
+  {
+    name: 'Кучкарова М.Т',
+    discr: 'НВП',
+  },
+  {
+    name: 'Тутунжан А.Н',
+    discr: 'Биологии',
+  },
+  {
+    name: 'Саидваккасова З.Х',
+    discr: 'Химии',
+  },
+];
 
 const Teachers: NextPage = () => {
   return (
@@ -93,16 +93,19 @@ const Teachers: NextPage = () => {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
+            gridTemplateColumns: { sm: '1fr', md: '1fr 1fr' },
             gridColumnGap: '2rem',
             mx: '10vw',
           }}
         >
-	{
-	teachersArr.map(({name,discr},idx)=>(
-		<MediaCard name={name} discription={discr} isFullName={true} />
-	))	
-	}
+          {teachersArr.map(({ name, discr }, idx) => (
+            <MediaCard
+              key={idx}
+              name={name}
+              discription={discr}
+              isFullName={true}
+            />
+          ))}
         </Box>
       </Layout>
     </>
