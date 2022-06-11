@@ -21,7 +21,7 @@ const BasicTable = (props: ITableProps) => {
   return (
     <Paper elevation={2} sx={{ maxWidth: '95vw', margin: '2rem auto' }}>
       <TableContainer>
-        <Table>
+        <Table sx={{minWidth:300}} >
           <TableHead>
             <TableRow>
               <TableCells tableitems={tableCells} />

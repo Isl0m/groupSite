@@ -68,7 +68,7 @@ const RatingItem: NextPage = () => {
             }}
           >
             <TableContainer>
-              <Table sx={{ minWidth: 750 }} aria-label="simple table">
+              <Table sx={{ minWidth: 300 }} >
                 <TableHead>
                   <TableRow sx={{ backgroundColor: bgColor }}>
                     <TableCell>Предметы</TableCell>
