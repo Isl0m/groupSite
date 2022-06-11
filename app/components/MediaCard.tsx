@@ -46,18 +46,19 @@ const MediaCard: React.FC<IProps> = ({
             </Typography>
           </CardContent>
         </Box>
-        {img ? (
-          <CardMedia
-            component="img"
-            sx={{ width: 151 }}
-            image="/static/images/cards/live-from-space.jpg"
-            alt="Live from space album cover"
-          />
-        ) : (
-          <Box>
+
+        <Box>
+          {img ? (
+            <Avatar
+              nameProps={name}
+              isMrgin={true}
+              isFullName={isFullName}
+              img={img}
+            />
+          ) : (
             <Avatar nameProps={name} isMrgin={false} isFullName={isFullName} />
-          </Box>
-        )}
+          )}
+        </Box>
       </Card>
     </Paper>
   );

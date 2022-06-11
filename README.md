@@ -1,3 +1,5 @@
-git remote add origin https://github.com/Isl0m/groupSite.git
-git branch -M main
-git push -u origin main
+[Deployed site url](https://group-site.vercel.app/)
+
+For run on local you need: Node Js, Npm
+Than print to console `npm i`
+Than `npm run dev`

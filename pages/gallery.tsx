@@ -32,6 +32,11 @@ const itemData = [
     title: 'img3',
   },
   {
+    img: '/img6.jpg',
+    title: 'img6',
+    cols: 2,
+  },
+  {
     img: '/img1.jpg',
     title: 'img1',
     cols: 2,

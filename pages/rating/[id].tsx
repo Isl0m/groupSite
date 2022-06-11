@@ -48,7 +48,10 @@ const RatingItem: NextPage = () => {
     return (
       <>
         <Layout title={currentRow.name}>
-          <BackgroundLetterAvatars nameProps={currentRow.name} />
+          <BackgroundLetterAvatars
+            nameProps={currentRow.name}
+            img={currentRow.imageUrl}
+          />
           <Typography
             variant="h3"
             component="h3"

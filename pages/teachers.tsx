@@ -11,6 +11,7 @@ const teachersArr = [
   {
     name: 'Сиденко И.А',
     discr: 'Математики',
+    imageUrl: '/teacher_1.JPG',
   },
   {
     name: 'Турханов С.Ф',
@@ -98,11 +99,12 @@ const Teachers: NextPage = () => {
             mx: '10vw',
           }}
         >
-          {teachersArr.map(({ name, discr }, idx) => (
+          {teachersArr.map(({ name, discr, imageUrl }, idx) => (
             <MediaCard
               key={idx}
               name={name}
               discription={discr}
+              img={imageUrl}
               isFullName={true}
             />
           ))}

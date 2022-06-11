@@ -21,7 +21,7 @@ const BasicTable = (props: ITableProps) => {
   return (
     <Paper elevation={2} sx={{ maxWidth: '95vw', margin: '2rem auto' }}>
       <TableContainer>
-        <Table sx={{ minWidth: 750 }} aria-label="simple table">
+        <Table sx={{ minWidth: 300 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCells tableitems={tableCells} />
@@ -34,7 +34,8 @@ const BasicTable = (props: ITableProps) => {
                   hover={true}
                   onClick={() => handleClick(num)}
                   key={num + name}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
                   <TableCell>{num}</TableCell>
                   <TableCell>{name}</TableCell>
                   <TableCells tableitems={subjects} />

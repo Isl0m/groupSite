@@ -23,6 +23,7 @@ interface IStringAvatar {
   nameProps: string;
   isMrgin?: boolean;
   isFullName?: boolean;
+  img?: string;
 }
 function stringAvatar(props: IStringAvatar) {
   const {
@@ -61,6 +62,23 @@ function stringAvatar(props: IStringAvatar) {
   };
 }
 
+function getAvatarStyle(type: boolean | undefined) {
+  if (!type)
+    return {
+      marginTop: '10vh',
+      marginRight: 'auto',
+      marginLeft: 'auto',
+      width: 150,
+      height: 150,
+    };
+  else
+    return {
+      width: 75,
+      height: 75,
+    };
+}
 export default function BackgroundLetterAvatars(props: IStringAvatar) {
-  return <Avatar {...stringAvatar(props)} />;
+  if (props.img)
+    return <Avatar src={props.img} sx={getAvatarStyle(props.isMrgin)} />;
+  else return <Avatar {...stringAvatar(props)} />;
 }
