@@ -55,6 +55,11 @@ const itemData = [
     title: 'home1',
     cols: 2,
   },
+  {
+    img: '/img9.jpg',
+    title: 'img9',
+    cols: 2,
+  },
 ];
 const itemDataSM = [
   {
@@ -101,6 +106,11 @@ const itemDataSM = [
   {
     img: '/home1.jpg',
     title: 'home1',
+    cols: 4,
+  },
+  {
+    img: '/img9.jpg',
+    title: 'img9',
     cols: 4,
   },
 ];
