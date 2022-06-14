@@ -132,7 +132,7 @@ const Gallary: NextPage = () => {
     if (mediaSM) {
       return 180;
     }
-    return 120;
+    return 100;
   };
   return (
     <>
