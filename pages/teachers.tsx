@@ -16,6 +16,8 @@ const teachersArr = [
   {
     name: 'Турханов С.Ф',
     discr: 'Математики',
+imageUrl: '/teacher_2.jpg',
+  
   },
   {
     name: 'Кульчуков Б.Ж',
@@ -52,10 +54,12 @@ const teachersArr = [
   {
     name: 'Арзикулов А.И',
     discr: 'Физкультуры',
+    imageUrl: '/teacher_3.jpg',
   },
   {
     name: 'Заитова Ш.Р',
     discr: 'Истории',
+    imageUrl: '/teacher_5.jpg',
   },
   {
     name: 'Ходжаев М.С',
@@ -64,6 +68,8 @@ const teachersArr = [
   {
     name: 'Чалтаев Б.К',
     discr: 'НВП',
+    imageUrl: '/teacher_4.jpg',
+
   },
   {
     name: 'Кучкарова М.Т',
