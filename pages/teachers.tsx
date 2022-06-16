@@ -14,7 +14,7 @@ const teachersArr = [
     imageUrl: '/teacher_1.jpg',
   },
   {
-    name: 'Турханов С.Ф',
+    name: 'Тураханов С.Ф',
     discr: 'Математики',
 imageUrl: '/teacher_2.jpg',
   
