@@ -19,6 +19,7 @@ const pages = [
   ['Галерея', '/gallery'],
   ['Учителя', '/teachers'],
   ['Оценки', '/rating'],
+  ['Администрация', '/admins'],
 ];
 
 const Header: React.FC = () => {

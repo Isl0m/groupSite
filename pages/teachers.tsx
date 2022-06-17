@@ -16,8 +16,7 @@ const teachersArr = [
   {
     name: 'Тураханов С.Ф',
     discr: 'Математики',
-imageUrl: '/teacher_2.jpg',
-  
+    imageUrl: '/teacher_2.jpg',
   },
   {
     name: 'Кульчуков Б.Ж',
@@ -69,7 +68,6 @@ imageUrl: '/teacher_2.jpg',
     name: 'Чалтаев Б.К',
     discr: 'НВП',
     imageUrl: '/teacher_4.jpg',
-
   },
   {
     name: 'Кучкарова М.Т',
